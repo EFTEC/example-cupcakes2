@@ -1,0 +1,18 @@
+{
+    "name": "jorge/example.cupcakes",
+    "description": "Example of a catalogo made with php",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jorge Castro",
+            "email": "jorge.castro.c@gmail.com"
+        }
+    ],
+    "require": {
+        "eftec/bladeone": "^3.46.1",
+        "eftec/pdoone": "^1.48",
+        "eftec/validationone": "^1.24.2",
+        "ext-gd": "*"
+    }
+}
