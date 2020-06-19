@@ -47,6 +47,12 @@ The **loglevel** is for debug purpose. If the system fails, then it will show a 
 
 We need to create a new schema called cupcakes, so we included a file called 📃**initialize.php**. it creates the schema, the table and it adds sample data.
 
+This code creates all the relations.
+```php
+$relations=['cupcakes'=>'CupcakeRepo']; // table=>class
+$logs=$pdoOne->generateAllClasses($relations,'CupcakeDataBase','',__DIR__);
+```
+
 * We will use a single table called  🗒 "cupcakes". We will also need a class called Repository Class (or Repository Service). Usually, there is one class per table but we will have two classes per entity. 
 
 It also creates 3 files:

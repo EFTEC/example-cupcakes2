@@ -55,29 +55,11 @@ try {
     echo "<li style='background-color: red'>Unable to insert data!</li>";
 }
 
-try {
-    $relations=['cupcakes'=>'Cupcake'];
-    $code=$pdoOne->generateBaseClass('CupcakeDataBase','',$relations);
-    file_put_contents('CupcakeDataBase.php',$code);
-    echo "<li>OK: CupcakeDataBase.php created</li>";
-} catch (Exception $e) {
-    echo "<li style='background-color: red'>Unable to create CupcakeDataBase.php!</li>";
-}
+$relations=['cupcakes'=>'CupcakeRepo'];
+$logs=$pdoOne->generateAllClasses($relations,'CupcakeDataBase','',__DIR__);
 
-try {
-    $relations=['cupcakes'=>'CupcakeRepo'];
-    $code=$pdoOne->generateCodeClass('cupcakes','',null,$relations,[],null,null,'CupcakeDataBase');
-    file_put_contents('CupcakeRepoExt.php',$code);
-    echo "<li>OK: CupcakeRepoExt.php created</li>";
-    if(!file_exists('CupcakeRepo.php')) {
-        $code=$pdoOne->generateCodeClassRepo('cupcakes','',$relations,[]);
-        file_put_contents('CupcakeRepo.php',$code);
-        echo "<li>OK: CupcakeRepo.php created</li>";
-    } else {
-        echo "<li style='background-color: yellow'>Skipped the creation of CupcakeRepo.php</li>";
-    }
-} catch (Exception $e) {
-    echo "<li style='background-color: red'>Unable to create CupcakeRepoExt.php!</li>";
+foreach($logs as $log) {
+    echo "<li style='background-color: red'>$log</li>";
 }
 
 

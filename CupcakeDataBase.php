@@ -27,7 +27,7 @@ class CupcakeDataBase extends _BasePdoOneRepo
     
     /** @var string[] it is used to set the relations betweeen table (key) and class (value) */
     const RELATIONS = [
-	    'cupcakes' => 'Cupcake'
+	    'cupcakes' => 'CupcakeRepo'
 	];
     /**
      * With the name of the table, we get the class
