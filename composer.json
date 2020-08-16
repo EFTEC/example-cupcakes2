@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "eftec/bladeone": "^3.46.1",
-        "eftec/pdoone": "^1.49",
+        "eftec/bladeone": "^3.46.3",
+        "eftec/pdoone": "^2.2.1",
         "eftec/validationone": "^1.24.2",
         "ext-gd": "*"
     }

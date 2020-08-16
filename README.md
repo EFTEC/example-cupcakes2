@@ -82,10 +82,9 @@ CupcakeRepo::first(20); // we get a single row (or false if it fails)
 // list
 CupcakeRepo::toList(); // we get all the rows of the table
 // list filtered
-CupcakeRepo::where('Price>?',['i',50])::toList(); //we get all the rows where price is > 50 
-												  //(the 'i' indicates integer and 's' for string/float)
+CupcakeRepo::where('Price>?',[50])::toList(); //we get all the rows where price is > 50 
 // List ordered and filtered
-CupcakeRepo::where('Price>?',['i',50])::order('Name')::toList(); // select * from cupcakes where price>50 order by name
+CupcakeRepo::where('Price>?',[50])::order('Name')::toList(); // select * from cupcakes where price>50 order by name
 
 ```
 

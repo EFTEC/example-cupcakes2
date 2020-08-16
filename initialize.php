@@ -13,7 +13,7 @@ try {
     $pdoOne->runRawQuery($sql);
     echo "<li>OK: create schema</li>";
 } catch (Exception $e) {
-    echo "<li style='background-color: red'>Unable to create schema!</li>";
+    echo "<li style='background-color: red'>Unable to create schema! ".$e->getMessage()."</li>";
 }
 
 
@@ -45,14 +45,14 @@ try {
     echo "<li>OK: create table</li>";
 } catch (Exception $e) {
 
-    echo "<li style='background-color: red'>Unable to create table!</li>";
+    echo "<li style='background-color: red'>Unable to create table! ".$e->getMessage()."</li>";
 }
 
 try {
     $pdoOne->runMultipleRawQuery($rows);
     echo "<li>OK: insert data!</li>";
 } catch (Exception $e) {
-    echo "<li style='background-color: red'>Unable to insert data!</li>";
+    echo "<li style='background-color: red'>Unable to insert data! ".$e->getMessage()."</li>";
 }
 
 $relations=['cupcakes'=>'CupcakeRepo'];
